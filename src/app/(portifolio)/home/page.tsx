@@ -1,4 +1,4 @@
-import TypingText from '@/components/typingText';
+import { TypingText } from '@/components/typingText/typingText';
 
 export default function Home() {
   return (
