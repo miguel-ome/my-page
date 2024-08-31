@@ -35,8 +35,8 @@ export function MenuMobile() {
             </Link>
           </li>
           <li>
-            <Link href="/hability" className="text-xl" onClick={toggleMenu}>
-              Habilidades
+            <Link href="/about" className="text-xl" onClick={toggleMenu}>
+              Sobre
             </Link>
           </li>
           <li>

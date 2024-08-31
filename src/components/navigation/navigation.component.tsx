@@ -10,8 +10,8 @@ export function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href="/hability" className="hover:text-orange transition">
-            Habilidades
+          <Link href="/about" className="hover:text-orange transition">
+            Sobre
           </Link>
         </li>
         <li>
