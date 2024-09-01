@@ -6,6 +6,7 @@ import { AboutToMe } from './(sections)/aboutToMe';
 import { Projects } from './(sections)/projects';
 import { Hability } from './(sections)/hability';
 import { Contact } from './(sections)/contact';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 const sections: ReactNode[] = [
   <AboutToMe key={1} />,
@@ -36,7 +37,13 @@ export default function About() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center text-white md:w-4/5">
+    <div className="w-full h-full flex flex-col justify-center items-center text-white md:w-4/5 relative">
+      <button
+        className="absolute opacity-10 hover:opacity-50 transition left-0"
+        onClick={() => toggleIndexCarrousel({ index: -1 })}
+      >
+        <FaChevronLeft size="150" color="gray" />
+      </button>
       <div
         className="w-full h-full flex flex-col justify-center items-center transition"
         {...handlePropsSwipeable}
@@ -45,6 +52,12 @@ export default function About() {
           <div className="w-80 text-center">{sections[indexCarrousel]}</div>
         </div>
       </div>
+      <button
+        className="absolute opacity-10 hover:opacity-50 transition right-0"
+        onClick={() => toggleIndexCarrousel({ index: 1 })}
+      >
+        <FaChevronRight size="150" color="gray" />
+      </button>
       <nav className="space-x-2">
         <button
           className={`w-3 h-3 rounded-full border ${indexCarrousel === 0 ? 'border-orange bg-orange' : 'border-white'}`}

@@ -12,7 +12,7 @@ export default function Home({ children }: HomeProps) {
       <header>
         <MenuMobile />
       </header>
-      <section className="flex justify-end items-end w-80 h-3/4 m-auto md:w-screen">
+      <section className="flex justify-end items-end w-80 h-3/4 m-auto md:w-screen md:h-screen md:p-8">
         <div className=" w-full h-full flex-col flex justify-center items-center">
           {children}
         </div>
