@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 
 interface TypingTextProps {
   text: string;
@@ -22,5 +22,5 @@ export function TypingText({ text, speed = 10 }: TypingTextProps) {
     }
   }, [index, text, speed]);
 
-  return <p className="text-white text-lg font-medium">{displayedText}</p>;
+  return <>{displayedText}</>;
 }
