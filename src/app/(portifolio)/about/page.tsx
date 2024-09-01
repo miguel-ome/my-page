@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { AboutToMe } from './(sections)/aboutToMe';
 import { Projects } from './(sections)/projects';
@@ -8,10 +8,10 @@ import { Hability } from './(sections)/hability';
 import { Contact } from './(sections)/contact';
 
 const sections: ReactNode[] = [
-  <AboutToMe />,
-  <Projects />,
-  <Hability />,
-  <Contact />,
+  <AboutToMe key={1} />,
+  <Projects key={2} />,
+  <Hability key={3} />,
+  <Contact key={4} />,
 ];
 
 export default function About() {
