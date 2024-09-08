@@ -15,3 +15,24 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+@layer utilities {
+  /* Estilo do scrollbar */
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Fundo do track */
+  .scrollbar::-webkit-scrollbar-track {
+    background: #4b5563;
+    border-radius: 8px;
+  }
+
+  /* Thumb do scrollbar */
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #334155; /* Cor do thumb */ 
+    border-radius: 8px;
+    border: 2px solid transparent; /* Espaçamento ao redor */
+  }
+}

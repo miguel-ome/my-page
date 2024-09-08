@@ -37,9 +37,9 @@ export default function About() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center text-white md:w-4/5 relative">
+    <div className="w-full h-full flex flex-col justify-center items-center text-white lg:w-4/5 relative">
       <button
-        className="absolute opacity-10 hover:opacity-50 transition left-0 hidden md:block"
+        className="absolute opacity-10 hover:opacity-50 transition left-0 hidden lg:block"
         onClick={() => toggleIndexCarrousel({ index: -1 })}
       >
         <FaChevronLeft size="150" color="gray" />
@@ -48,12 +48,13 @@ export default function About() {
         className="w-full h-full flex flex-col justify-center items-center transition"
         {...handlePropsSwipeable}
       >
-        <div>
-          <div className="w-80 text-center">{sections[indexCarrousel]}</div>
+        {/* Presentation of the text */}
+        <div className="w-full lg:w-2/3 h-2/3 overflow-y-scroll scrollbar text-center px-2">
+          <div>{sections[indexCarrousel]}</div>
         </div>
       </div>
       <button
-        className="absolute opacity-10 hover:opacity-50 transition right-0 hidden md:block"
+        className="absolute opacity-10 hover:opacity-50 transition right-0 hidden lg:block"
         onClick={() => toggleIndexCarrousel({ index: 1 })}
       >
         <FaChevronRight size="150" color="gray" />

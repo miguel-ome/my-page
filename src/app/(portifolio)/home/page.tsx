@@ -1,4 +1,4 @@
-import { TypingText } from '@/components/typingText/typingText';
+import { TypingEffect } from '@/components/typingText/typingText';
 
 export default function Home() {
   return (
@@ -11,8 +11,10 @@ export default function Home() {
         Bem-vindo ao meu espaço digital!
       </p>
       <p className="text-white text-lg font-medium">
-        <TypingText
-          text="Fico feliz em te ver por aqui. Este é o lugar onde compartilho minha jornada como desenvolvedor fullstack, meus projetos, e um pouco sobre minhas paixões. Navegue à vontade, explore meus trabalhos, e não hesite em entrar em contato. Vamos construir algo incrível juntos!"
+        <TypingEffect
+          paragraphs={[
+            'Fico feliz em te ver por aqui. Este é o lugar onde compartilho minha jornada como desenvolvedor fullstack, meus projetos, e um pouco sobre minhas paixões. Navegue à vontade, explore meus trabalhos, e não hesite em entrar em contato. Vamos construir algo incrível juntos!',
+          ]}
           speed={50}
         />
       </p>

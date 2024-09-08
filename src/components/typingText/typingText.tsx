@@ -2,25 +2,37 @@
 
 import { useState, useEffect } from 'react';
 
-interface TypingTextProps {
-  text: string;
+interface TypingEffectProps {
   speed?: number;
+  paragraphs: string[];
 }
 
-export function TypingText({ text, speed = 10 }: TypingTextProps) {
+export const TypingEffect = ({ paragraphs, speed = 50 }: TypingEffectProps) => {
   const [displayedText, setDisplayedText] = useState('');
-  const [index, setIndex] = useState(0);
+  const [currentParagraph, setCurrentParagraph] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
 
   useEffect(() => {
-    if (index < text.length) {
-      const timeoutId = setTimeout(() => {
-        setDisplayedText((prev) => prev + text[index]);
-        setIndex(index + 1);
-      }, speed);
-
-      return () => clearTimeout(timeoutId);
+    if (currentParagraph < paragraphs.length) {
+      if (charIndex < paragraphs[currentParagraph].length) {
+        const timeout = setTimeout(() => {
+          setDisplayedText(
+            (prev) => prev + paragraphs[currentParagraph].charAt(charIndex),
+          );
+          setCharIndex(charIndex + 1);
+        }, speed); // Velocidade da digitação
+        return () => clearTimeout(timeout);
+      } else {
+        // Pausa entre parágrafos
+        const timeout = setTimeout(() => {
+          setCurrentParagraph(currentParagraph + 1);
+          setDisplayedText((prev) => prev + '\n\n'); // Adiciona uma quebra de linha
+          setCharIndex(0);
+        }, 1000); // Tempo entre um parágrafo e outro
+        return () => clearTimeout(timeout);
+      }
     }
-  }, [index, text, speed]);
+  }, [charIndex, currentParagraph, paragraphs, speed]);
 
   return <>{displayedText}</>;
-}
+};

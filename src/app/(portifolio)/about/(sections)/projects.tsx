@@ -1,9 +1,9 @@
-import { TypingText } from '@/components/typingText/typingText';
+import { TypingEffect } from '@/components/typingText/typingText';
 
 export function Projects() {
   return (
     <h1>
-      <TypingText text="Projetos" speed={50} />
+      <TypingEffect paragraphs={['Projetos']} speed={25} />
     </h1>
   );
 }
