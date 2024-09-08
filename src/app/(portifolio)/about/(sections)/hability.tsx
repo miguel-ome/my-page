@@ -1,5 +1,4 @@
 import { TypingEffect } from '@/components/typingText/typingText';
-import { FaReact } from 'react-icons/fa';
 
 export function Hability() {
   return (
